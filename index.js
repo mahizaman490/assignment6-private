@@ -21,7 +21,7 @@ tabContainer.appendChild(div)
 const handleLoad = async (categoryId) => {
    const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`)
    const data = await response.json()
-   console.log(data)
+   console.log(data.data)
 }
 
 
@@ -29,3 +29,4 @@ const handleLoad = async (categoryId) => {
 
  
 handleCategory()
+
