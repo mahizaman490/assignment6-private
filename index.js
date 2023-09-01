@@ -60,8 +60,7 @@ ${news.authors[0].verified}
 </div>
 
 </div>
-
-
+                                             
 `
 cardContainer.appendChild(div)
 
