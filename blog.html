@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="pl-2 py-5">
+
+
+    <h1 class="font-bold text-5xl text-center py-3">Blog Questions</h1>
+    <h1 class="text-3xl py-3">
+        1.Scope of var, let, and const:
+        </h1>
+        <p class="">
+        
+           JavaScript provides three different ways to declare variables: var, let, and const. Each has its own scope and use cases:
+        
+           - var: Variables declared with var are function-scoped, which means they are only accessible within the function where they are declared. They have a broader scope called "hoisting," which can sometimes lead to unexpected behavior.
+        
+           - let: Variables declared with let are block-scoped, meaning they are confined to the block (e.g., within curly braces {}) in which they are defined. Unlike var, let doesn't have hoisting, making it more predictable in behavior.
+        
+           - const: Constants declared with const are also block-scoped, but they cannot be reassigned once a value is assigned to them. However, it's important to note that the value they hold can still be mutable if it's an object or an array.
+        
+           Use let and const when you need block-level scoping and predictability in your code, and reserve var for specific cases where you need function-level scoping or compatibility with older code.
+        </p>
+        
+        <h1 class="text-3xl py-3">2.Use cases of null and undefined:</h1>
+        <p>
+         - null: In JavaScript, null is a value that represents the intentional absence of any object value. It is often used to explicitly indicate that a variable or property has no meaningful value or that an object should have no reference to it. For example, you can set a variable to null to release resources or to reset a reference.
+        
+           - undefined: undefined in JavaScript indicates that a variable or property has been declared but hasn't been assigned a value. It is also the default return value of functions that do not return a value explicitly. You'll often encounter undefined when trying to access a property or variable that doesn't exist or when a function argument is missing.
+        
+           Use null when you want to explicitly convey the absence of a value, and rely on undefined to indicate that a variable or property hasn't been defined or initialized yet.
+        
+        </p>
+        
+        <h1 class="text-3xl py-3">3.REST API (Representational State Transfer API):</h1>
+        
+        <p>
+            REST API stands for Representational State Transfer Application Programming Interface. It is an architectural style for designing networked applications, and it is based on a set of constraints and principles. Here are the key aspects of REST:
+        
+        
+           -Resources: In a RESTful API, resources are the primary abstractions, represented by URLs (Uniform Resource Locators). Resources can be anything that can be named, such as documents, images, or database records.
+        
+           - HTTP Methods: REST APIs use standard HTTP methods to perform operations on resources. The most commonly used methods are GET (retrieve data), POST (create a new resource), PUT (update an existing resource), and DELETE (remove a resource).
+        
+           - Stateless Communication: Communication between client and server should be stateless, meaning each request/response cycle should be independent and not rely on previous interactions.
+        
+           REST APIs are widely used for building web services and are known for their simplicity, scalability, and ease of integration with various programming languages and platforms. They are commonly used in web development to enable communication between clients (such as web browsers) and servers, allowing for the exchange of data in a standardized way. 
+        </p>
+        
+  
+</body>
+</html>
