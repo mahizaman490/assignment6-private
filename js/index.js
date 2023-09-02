@@ -73,12 +73,19 @@ const handleLoad = async (categoryId) => {
            </h2>
          </div>
          <div class="flex items-center">
-           <p class="pl-24">${news.authors[0].profile_name}</p>
+           <p class="pl-24">${news.authors[0].profile_name}
+           <div class='ml-3 w-6'>
+           
+           
+           ${news.authors[0].verified ? "<img src='../images/verified.png' />" : ''}
+           </div>
+           
+           
+           
+           
+           </p>
          
-             <div class="badge badge-primary mr-20">
-              
-               ${news.authors[0].verified?' <img src="../" alt="" class="w-4 h-4" />' : ''}
-             </div>
+       
         
          </div>
          <h3 class="pl-28"> <span>${news.others.views}</span> views</h3>
