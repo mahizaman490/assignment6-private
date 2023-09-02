@@ -38,8 +38,14 @@ tabContainer.appendChild(div)
 const handleLoad = async (categoryId) => {
   const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`)
   const data = await response.json()
+  const AllData = data.data
+  showCategoryData(AllData)
+
+}
+
+const showCategoryData = (mainData)=> {
   const errorMsg = document.getElementById('contentDiv')
-  if(data.data.length === 0){
+  if(mainData.length === 0){
   errorMsg.classList.remove("hidden")
 
 
@@ -49,18 +55,17 @@ const handleLoad = async (categoryId) => {
   }
   const cardContainer = document.getElementById("card-container")
   cardContainer.innerHTML = ""
-  data.data.forEach((news) => {
+  mainData.forEach((news) => {
    console.log(news)
  
    const div = document.createElement("div")
    div.innerHTML = `
      <div class="card h-96 bg-base-100 shadow-xl">
-       <figure class='h-40 '>
-         <img src=${news.thumbnail} class='relative w-full'/>
-         <div class="badge badge-neutral absolute mt-24 ml-32">
-           ${news.others.posted_date}
-         </div>
-       </figure>
+     <figure class='h-40 '>
+     <img src=${news.thumbnail} class='relative w-full'/>
+     ${/^\d+$/.test(news.others.posted_date) ? `<div class="badge badge-neutral absolute mt-24 ml-32">${news.others.posted_date}</div>` : ''}
+   </figure>
+   
        <div class="card-body"> 
          <div class="flex">
            <div class="avatar">
@@ -80,12 +85,6 @@ const handleLoad = async (categoryId) => {
            ${news.authors[0].verified ? "<img src='../images/verified.png'  />" : ''}
            </div>
            
-           
-           
-           
-          
-         
-       
         
          </div>
          <h3 class="pl-12"> <span>${news.others.views}</span> views</h3>
