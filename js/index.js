@@ -55,8 +55,8 @@ const handleLoad = async (categoryId) => {
    const div = document.createElement("div")
    div.innerHTML = `
      <div class="card h-96 bg-base-100 shadow-xl">
-       <figure>
-         <img src=${news.thumbnail} class='relative'/>
+       <figure class='h-40 '>
+         <img src=${news.thumbnail} class='relative w-full'/>
          <div class="badge badge-neutral absolute mt-24 ml-32">
            ${news.others.posted_date}
          </div>
