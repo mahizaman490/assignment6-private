@@ -13,35 +13,30 @@ div.innerHTML = `
 `
 tabContainer.appendChild(div)
 })
-// console.log(data.data)
-
 
 }
 
+const newSortData = [];
+const stringToNumberViews = (views)=> {
+  const numberViews = parseFloat(views)
+  if(views.includes('k')){
+    return numberViews * 1000;
+  }
+  return numberViews
+}
 
-
-
-// starts here
-// const contentDiv = document.getElementById("contentDiv");
-
-// if ( data.data === 0) {
-//   contentDiv.classList.remove("hidden");
-// } else {
-//   contentDiv.classList.add("hidden");
-// }
-
-
-
-//ends here
-
-
-
+document.getElementById('sort-btn').addEventListener('click',()=> {
+  newSortData.sort((a,b)=> stringToNumberViews(b.others.views)- stringToNumberViews(a.others.views))
+  showCategoryData(newSortData)
+})
 
 const handleLoad = async (categoryId) => {
   const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`)
   const data = await response.json()
   const AllData = data.data
-  showCategoryData(AllData)
+  newSortData.length = 0;
+  newSortData.push(...AllData)
+  showCategoryData(newSortData)
 
 }
 
