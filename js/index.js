@@ -74,10 +74,10 @@ const handleLoad = async (categoryId) => {
          </div>
          <div class="flex items-center">
            <p class="pl-24">${news.authors[0].profile_name}
-           <div class='ml-3 w-6'>
+           <div class='ml-3 w-10 h-8 '>
            
            
-           ${news.authors[0].verified ? "<img src='../images/verified.png' />" : ''}
+           ${news.authors[0].verified ? "<img src='../images/verified.png'  />" : ''}
            </div>
            
            
