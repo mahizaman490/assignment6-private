@@ -88,7 +88,7 @@ const handleLoad = async (categoryId) => {
        
         
          </div>
-         <h3 class="pl-28"> <span>${news.others.views}</span> views</h3>
+         <h3 class="pl-24"> <span>${news.others.views}</span> views</h3>
        </div>
      </div>
    `;
