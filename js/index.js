@@ -35,6 +35,8 @@ tabContainer.appendChild(div)
 //ends here
 
 
+
+
 const handleLoad = async (categoryId) => {
   const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`)
   const data = await response.json()
@@ -56,14 +58,32 @@ const showCategoryData = (mainData)=> {
   const cardContainer = document.getElementById("card-container")
   cardContainer.innerHTML = ""
   mainData.forEach((news) => {
-   console.log(news)
+    const seconds = news.others.posted_date;
+    const runingMinutes = seconds % 60;
+
+    const totalMinutes = (seconds-runingMinutes) / 60;
+
+    const runingHourse =  totalMinutes % 60;
+    const totalHours = (totalMinutes - runingHourse) / 60;
+
+    let showTime;
+    if(seconds.length === 0){
+      showTime;
+    }
+    else {
+      showTime = `${totalHours} Hours ${runingHourse} minutes ago`
+    }
+
+
  
    const div = document.createElement("div")
    div.innerHTML = `
      <div class="card h-96 bg-base-100 shadow-xl">
-     <figure class='h-40 '>
-     <img src=${news.thumbnail} class='relative w-full'/>
-     ${/^\d+$/.test(news.others.posted_date) ? `<div class="badge badge-neutral absolute mt-24 ml-32">${news.others.posted_date}</div>` : ''}
+     <figure class='h-40 relative'>
+     <img src=${news.thumbnail} class=' w-full'/>
+      <div class=" ${showTime=== undefined ? 'bg-transparent  border-none' : 'bg-black'} badge badge-neutral absolute right-2 bottom-5">
+        ${showTime ? showTime : ''}
+      </div>
    </figure>
    
        <div class="card-body"> 
